@@ -184,3 +184,56 @@ if list_1 == list_2:
     print('The lists are the same.')
 else:
     print('The lists are different.')
+# %%
+## Simple rock paper scissors
+
+import random
+"""
+The program asks two inputs from the user: player1 and player2. The inputs can be either 'rock', 'paper' or 'scissors'.
+
+Code the logic of the game to see who wins. Print the result in the format: "Player 1 wins" or "Player 2 wins"
+If one of the inputs is not "rock", "paper" or "scissors", print "Invalid input"
+If both inputs are the same, print "It's a tie"
+Create two new variables, num_player_one_wins and num_player_two_wins, and use them to keep track of the number of wins each player has
+Put the code inside a while loop that runs until one of the players has won three rounds
+"""
+
+rps_list = ['rock', 'paper', 'scissors']
+
+num_player_one_wins = 0
+
+num_player_two_wins = 0
+
+while num_player_one_wins < 3 and num_player_two_wins < 3:
+    p1_choice = random.choice(rps_list)
+    p2_choice = random.choice(rps_list)
+
+    print(f'Player 1 plays {p1_choice}')
+    print(f'Player 2 plays {p2_choice}')
+
+    if p1_choice == p2_choice:
+        print('its a tie')
+    elif p1_choice == 'rock' and p2_choice == 'paper':
+        print('p2 wins')
+        num_player_two_wins +=1
+    elif p1_choice == 'rock' and p2_choice == 'scissors':
+        print('p1 wins')
+    elif p1_choice == 'paper' and p2_choice == 'scissors':
+        print('p2 wins')
+        num_player_one_wins +=1
+    elif p2_choice == 'rock' and p1_choice == 'paper':
+        print('p2 wins')
+        num_player_one_wins +=1
+    elif p2_choice == 'rock' and p1_choice == 'scissors':
+        print('p2 wins')
+        num_player_two_wins +=1
+    elif p2_choice == 'paper' and p1_choice == 'scissors':
+        print('p1 wins')
+else:
+    if num_player_one_wins > num_player_two_wins:
+        print(f'player 1 wins with score {num_player_one_wins} to {num_player_two_wins}')
+    else:
+        print(f'player 2 wins with score {num_player_two_wins} to {num_player_one_wins}')
+
+
+# %%
