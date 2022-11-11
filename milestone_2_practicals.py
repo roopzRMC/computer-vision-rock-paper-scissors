@@ -237,3 +237,47 @@ else:
 
 
 # %%
+## Budget calculator
+# Each element is the product code, the individual price, and the quantity.
+order_list = [("tom", 0.87, 4),
+              ("sug", 1.09, 3),
+              ("ws", 0.29, 4),
+              ("juc", 1.89, 1),
+              ("fo", 1.29, 2)]
+
+# This dictionary gives the full name of each product code.
+names = {"tom": "Tomatoes",
+         "sug": "Sugar",
+         "ws": "Washing Sponges",
+         "juc": "Juice",
+         "fo": "Foil"}
+
+budget = 10.00
+running_total = 0
+receipt = []
+
+# %%
+"""
+Use a for loop to iterate through the order_list
+At each iteration:
+Add the items to the receipt list
+Add the total cost of the item to the running_total variable
+Subtract the total cost of the item from the budget variable
+If at some point the budget variable is less than 0, print the message "You have exceeded your budget by {budget}." and break the loop
+
+"""
+# %%
+
+for i in range(0, len(order_list)):
+    while budget >= 0:
+        receipt.append(order_list[i][0])
+        running_total += order_list[i][1] * order_list[i][2]
+        print(f'running_total is {running_total}')
+        budget = 10 - running_total
+        print(f'budget is {budget}')
+    else:
+        print('budget exceeded')
+        break
+        
+
+# %%
