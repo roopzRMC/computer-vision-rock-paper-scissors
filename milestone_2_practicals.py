@@ -115,3 +115,72 @@ my_items = list(shop.keys())
 # %%
 shop['tomatoes']*shop['prices']['tomatoes']
 # %%
+my_items
+# %%
+costs = []
+for i in range(0, 5):
+    ## calculate number of packs required for item
+    print((shop[my_items[i]]/shop['pack_sizes']['tomatoes']*shop['prices'][my_items[i]]))
+# %%
+## Loops
+## while loop to print 1 to 50
+i = 1
+while i < 51:
+    print(i)
+    i += 1
+
+# %%
+## for loop to print 1 to 50
+
+for i in range(1, 51):
+    print(i)
+# %%
+## Count even numbers with a while loop
+i = 0
+while (i < 51):
+    if i%2 == 0:
+        print(i)
+        i +=1
+    else:
+        i +=1
+    
+
+# %%
+even_list = []
+for i in range(1, 101):
+    if i%2 == 0:
+        even_list.append(i)
+print(sum(even_list))
+# %%
+odd_list = []
+for i in range(1,101):
+    if i%2 != 0:
+        odd_list.append(i)
+print(sum(odd_list))
+    # %%
+odd_list
+# %%
+"""
+Write a program that prints the numbers from 1 to 100.
+
+For multiples of three print "Fizz" instead of the number
+For multiples of five print "Buzz"
+For numbers which are multiples of both three and five print "FizzBuzz"
+
+"""
+for i in range(1, 101):
+    if i%5 == 0 and i%3 ==0:
+        print(f'FizzBuzz {i}')
+    elif i%5 == 0:
+        print(f'Buzz {i}')
+    elif i%3 ==0:
+        print(f'Fizz {i}')
+    else:
+        print(i)
+# %%
+list_1 = [1, 2, 3]
+list_2 = [1, 2, 3]
+if list_1 == list_2:
+    print('The lists are the same.')
+else:
+    print('The lists are different.')
