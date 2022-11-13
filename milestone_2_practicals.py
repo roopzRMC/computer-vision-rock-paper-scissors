@@ -281,3 +281,33 @@ for i in range(0, len(order_list)):
         
 
 # %%
+#creating a list comprehension squaring even arguments and orr arguments after adding one to them
+
+my_list = [1,5,8,6,21]
+
+lc_list = [(i+1) ** 2 if i%2 !=0 else i**2 for i in my_list]
+
+print(lc_list)
+# %%
+computing_skills_dict = {'name':'rupert',
+            'skills': ['python', 'r', 'music']}
+
+music_skills_dict = {'name':'rupert',
+            'skills': ['piano', 'clarinet'] }
+# %%
+skills_list = [computing_skills_dict, music_skills_dict]
+# %%
+skills_list[1]
+# %%
+## find the last letter of first skill of last dictionary - should be o!
+
+skills_list[1]['skills'][0][4]
+# %%
+shop_dict = {"tom":0.87, "sug":1.09, "ws":0.29, "cc":1.89, "ccz":1.29}
+
+names_dict = {"tom":"Tomatoes", "sug":"Sugar", "ws":"Washing Sponges", "cc":"Coca-Cola", "ccz":"Coca-Cola Zero"}
+# %%
+## Using a dictionary comprehension and using another dictionary to look up the value
+filtered_shop = {names_dict[k]: v for k, v in shop_dict.items() if v > 1.00}
+# %%
+
