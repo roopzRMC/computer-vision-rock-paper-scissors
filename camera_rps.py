@@ -34,7 +34,7 @@ def get_prediction(t):
     # Destroy all the windows
     cv2.destroyAllWindows()
 
-    print(label_list[obj_predicted])
+    print(f' you chose {label_list[obj_predicted]}')
 # %%
 get_prediction(5)
 # %%
