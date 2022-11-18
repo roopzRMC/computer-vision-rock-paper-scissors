@@ -6,14 +6,18 @@ import time
 
 label_list = ['rock', 'paper', 'scissors', 'nothing']
 
-def get_prediction():
+def get_prediction(t):
     model = load_model('keras_model.h5')
     cap = cv2.VideoCapture(0)
     data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
 
     label_list = ['rock', 'paper', 'scissors', 'nothing']
 
-    while True: 
+    while t:
+        mins, secs = divmod(t, 60)
+        timer = '{:02d}:{:02d}'.format(mins, secs)
+        print(timer, end="\r")
+        time.sleep(1)
         ret, frame = cap.read()
         resized_frame = cv2.resize(frame, (224, 224), interpolation = cv2.INTER_AREA)
         image_np = np.array(resized_frame)
@@ -22,15 +26,15 @@ def get_prediction():
         prediction = model.predict(data)
         obj_predicted = np.argmax(prediction)
         cv2.imshow('frame', frame)
-        # Press q to close the window
         print(label_list[obj_predicted])
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            break
+        t -= 1
             
     # After the loop release the cap object
     cap.release()
     # Destroy all the windows
     cv2.destroyAllWindows()
+
+    print(label_list[obj_predicted])
 # %%
-get_prediction()
+get_prediction(5)
 # %%
