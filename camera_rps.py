@@ -1,10 +1,9 @@
-# %%
+
 import cv2
 from keras.models import load_model
 import numpy as np
 import time
-
-label_list = ['rock', 'paper', 'scissors', 'nothing']
+import random
 
 def get_prediction(t):
     model = load_model('keras_model.h5')
@@ -35,6 +34,52 @@ def get_prediction(t):
     cv2.destroyAllWindows()
 
     print(f' you chose {label_list[obj_predicted]}')
-# %%
-get_prediction(5)
-# %%
+    return label_list[obj_predicted]
+
+def computer_play(choice_list):
+    computer_choice = random.choice(choice_list)
+    print(f' I chose {computer_choice}')
+    return computer_choice
+
+
+def play_the_game():
+    user_wins = 0
+    computer_wins = 0
+
+    rps_list = ['rock', 'paper', 'scissors']
+
+    while (user_wins < 3) and (computer_wins < 3):
+        computer_choice = computer_play(rps_list)
+        my_choice = get_prediction(5)
+
+        #print(f'Computer plays {computer_choice}')
+        #print(f'User plays {my_choice}')
+
+        if computer_choice == my_choice:
+            print('its a tie')
+        elif computer_choice == 'rock' and my_choice == 'paper':
+            print('user wins')
+            user_wins +=1
+        elif computer_choice == 'rock' and my_choice == 'scissors':
+            print('computer wins')
+            computer_wins +=1
+        elif computer_choice == 'paper' and my_choice == 'scissors':
+            print('user wins')
+            user_wins +=1
+        elif my_choice == 'rock' and computer_choice == 'paper':
+            print('computer wins')
+            computer_wins +=1
+        elif my_choice == 'rock' and computer_choice == 'scissors':
+            print('user wins')
+            user_wins +=1
+        elif my_choice == 'paper' and computer_choice == 'scissors':
+            print('computer wins')
+            computer_wins += 1
+    else:
+        if computer_wins > user_wins:
+            print(f'computer wins with score {computer_wins} to {user_wins}')
+        else:
+            print(f'user wins with score {user_wins} to {computer_wins}')
+
+
+play_the_game()
