@@ -49,4 +49,27 @@ sorted(ls_tup, key=lambda x: len(x[0]))
 # Sort the list by the length of the name in each tuple, but in reverse order
 sorted(ls_tup, key=lambda x: len(x[0]), reverse=True)
 # %%
+"""
+Create a list of 5 numbers
 
+
+"""
+
+my_list = [4,7,6,9,2]
+# %%
+# Create a lambda function that squares a number. Then use map to square each number in the list
+print(list(map(squared_lambda,my_list)))
+# %%
+# Create a lambda function that cubes a number. Then use map to cube each number in the list
+print(list(map(cubed_lambda, my_list)))
+# %%
+# 
+"""
+Create a lambda function that takes in a number and returns that number squared if it is even, and cubed if it is odd. 
+Then use map to apply the function to each number in the list
+"""
+
+weird_lambda = lambda x: x**2 if x%2 == 0 else x**3
+# %%
+print(list(map(weird_lambda, my_list)))
+# %%
