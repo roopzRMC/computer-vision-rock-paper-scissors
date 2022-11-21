@@ -73,3 +73,20 @@ weird_lambda = lambda x: x**2 if x%2 == 0 else x**3
 # %%
 print(list(map(weird_lambda, my_list)))
 # %%
+## Lambda functions with filter
+"""
+
+Create a list of 10 strings
+
+Create a lambda function that takes in a string and returns True if the string is longer than 5 characters, and False if it is not. 
+Then use filter and the lambda function to filter out all strings that are longer than 5 characters
+
+Create a lambda function that takes in a string and returns True if the string is longer than 5 characters and starts with a vowel, 
+and False if it is not. Then use filter and the lambda function to filter out all strings that are longer than 5 characters and start with a vowel
+"""
+string_list = ['sennheiser', 'akg', 'abyss', 'hifiman', 've', 'tinn', 'final', 'beyerdynamic', 'modhouse', 'audeze']
+# %%
+lenfive_lambda = lambda x: False if len(x) > 5 else True
+# %%
+print(list(filter(lenfive_lambda, string_list)))
+# %%
