@@ -29,3 +29,22 @@ product_lambda = lambda x, y: x * y
 # %%
 product_lambda(8,6)
 # %%
+
+"""
+Create a list with 5 tuples, where each tuple contains a name and a number. Then, using the sort function, create a lambda function for each of the following bullet points:
+
+
+
+Sort the list by the length of the name in each tuple
+Sort the list by the length of the name in each tuple, but in reverse order
+
+"""
+
+ls_tup = [('yaz', 2), ('quentin', 3), ('jeremy', 6), ('richard', 4), ('james', 2)]
+# %%
+ls_tup
+# %%
+# Sort the list by the number in each tuple
+sorted(ls_tup, key=lambda x: x[1])
+# %%
+#   
