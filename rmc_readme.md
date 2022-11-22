@@ -97,3 +97,56 @@ except NameError:
 ```
 
 * Using the debugger built in to the IDE can help you step through the code to determine more complex bugs in the program that are not necessarily causing an error to be thrown
+
+> Lambda functions
+
+These are short version of normal functions and can be defined on a single line
+
+```
+# a standard function such as
+def square_func(y):
+    return y ** 2
+
+# becomes
+
+square_func = lambda y: y ** 2
+```
+- They can also accept 2 or more args
+
+```
+sum_func = lambda x, y: x + y
+```
+
+- Lambda functions can also be passed to higher order functions such as
+    - sorted()
+    - filter()
+    - map()
+
+```
+sorted(list, key = lambda x: x[1])
+```
+
+- Lambda functions can also be used to apply functions to an iterable
+
+```
+func = lambda x, y :x ** y
+list(map(func, [1,2,3,4], [1,3,3]))
+
+```
+
+> Updating RPS Game
+
+### Creating the interation
+
+- Waiting for a trigger
+    - using the input() function, a while loop is instantiated which will continuously until the s and enter keys are pressed
+    - once pressed it triggers a countdown set at 3 seconds so that the LAST prediction made via the keras model is the one that is set as the user choice
+    - This is housed in a get_prediction() function
+
+- Game Logic
+     - leveraging the computer_play() function in which a random selection is made from the rock, paper, scissors list - this function contains the rules of the game via a succession of if/else statements
+     - the game is executed on the basis of a 2 condition while loop (where both the user and computer scores MUST be less than three to ensure the best of 3 wins)
+     - the get_prediction() method is called each time triggering the counter for achieving a good quality prediction
+
+     
+     ![](screenshots/game_terminal_op.png)
