@@ -148,5 +148,6 @@ list(map(func, [1,2,3,4], [1,3,3]))
      - the game is executed on the basis of a 2 condition while loop (where both the user and computer scores MUST be less than three to ensure the best of 3 wins)
      - the get_prediction() method is called each time triggering the counter for achieving a good quality prediction
 
-     
-     ![](screenshots/game_terminal_op.png)
+
+     ![](screenshots/game_terminal_op.png?raw=true)
+
