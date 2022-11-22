@@ -151,3 +151,7 @@ list(map(func, [1,2,3,4], [1,3,3]))
 
      ![](screenshots/game_terminal_op.png?raw=true)
 
+- Moving to classes from procedural code
+     - the biggest challenge here was to ensure certain variables did NOT get instantiated with the class - self.t for the timer caused the code NOT to loop through the prediction properly
+     - t was left as t where as other variables requiring to be passed from function to function were made to be part of the class instance through self
+
